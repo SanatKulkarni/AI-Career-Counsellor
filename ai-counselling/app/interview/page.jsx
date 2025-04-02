@@ -69,57 +69,43 @@ export default function InterviewPractice() {
     setLoading(false);
   };
 
-  const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new MediaRecorder(stream);
-      const audioChunks = [];
+  const [recognition, setRecognition] = useState(null);
 
-      recorder.ondataavailable = (e) => {
-        audioChunks.push(e.data);
-      };
-
-      recorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunks);
-        const audioUrl = URL.createObjectURL(audioBlob);
-        const audio = new Audio(audioUrl);
-        
+    const startRecording = async () => {
+      try {
         const recognition = new window.webkitSpeechRecognition();
         recognition.continuous = true;
         recognition.interimResults = true;
-
+  
         recognition.onresult = (event) => {
           const transcript = Array.from(event.results)
             .map(result => result[0])
             .map(result => result.transcript)
             .join('');
-
+  
           console.log('Speech Recognition Result:', transcript);
-
+  
           const newAnswers = [...answers];
           newAnswers[currentQuestion] = transcript;
           setAnswers(newAnswers);
         };
-
+  
         recognition.start();
-        audio.play();
-      };
-
-      setMediaRecorder(recorder);
-      recorder.start();
-      setIsRecording(true);
-    } catch (err) {
-      console.error('Error accessing microphone:', err);
-      setError('Error accessing microphone. Please check your permissions.');
-    }
-  };
-
-  const stopRecording = () => {
-    if (mediaRecorder && isRecording) {
-      mediaRecorder.stop();
-      setIsRecording(false);
-    }
-  };
+        setRecognition(recognition);
+        setIsRecording(true);
+      } catch (err) {
+        console.error('Error starting speech recognition:', err);
+        setError('Error accessing microphone. Please check your permissions.');
+      }
+    };
+  
+    const stopRecording = () => {
+      if (recognition && isRecording) {
+        recognition.stop();
+        setIsRecording(false);
+        setRecognition(null);
+      }
+    };
 
   const generateQuestions = async (resumeAnalysis) => {
     try {
