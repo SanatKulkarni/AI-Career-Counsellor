@@ -47,7 +47,7 @@ export default function InterviewPractice() {
     try {
       const imageBase64 = await convertPdfToImage(file);
       
-      const genAI = new GoogleGenerativeAI('AIzaSyAzJno6phNweWn4MMU4j6LUgcqDfTW_cDk');
+      const genAI = new GoogleGenerativeAI('');
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const imagePart = {
@@ -109,7 +109,7 @@ export default function InterviewPractice() {
 
   const generateQuestions = async (resumeAnalysis) => {
     try {
-      const genAI = new GoogleGenerativeAI('AIzaSyAzJno6phNweWn4MMU4j6LUgcqDfTW_cDk');
+      const genAI = new GoogleGenerativeAI('');
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const prompt = `Generate exactly 5 interview questions based on this resume analysis. Return ONLY a JSON object in this exact format without any additional text:
@@ -146,7 +146,7 @@ export default function InterviewPractice() {
 
   const analyzeInterview = async () => {
     try {
-      const genAI = new GoogleGenerativeAI('AIzaSyAzJno6phNweWn4MMU4j6LUgcqDfTW_cDk');
+      const genAI = new GoogleGenerativeAI('');
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const prompt = `Analyze these interview responses and provide:
