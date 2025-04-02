@@ -22,25 +22,18 @@ export default function HomePage() {
                 <Link href="/" className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                   Home
                 </Link>
-                <Link href="/about" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  About
+                <Link href="/newbie" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Non-Professionals
                 </Link>
-                <Link href="/services" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Services
+                <Link href="/resumeanalysis" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Professionals
                 </Link>
-                <Link href="/resources" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                  Resources
+                <Link href="/interview" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Practice
                 </Link>
               </div>
             </div>
-            <div className="hidden md:flex items-center">
-              <Link href="/login" className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                Login
-              </Link>
-              <Link href="/signup" className="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                Sign Up
-              </Link>
-            </div>
+            {/* Remove the desktop login/signup buttons */}
             <div className="-mr-2 flex items-center md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -62,8 +55,8 @@ export default function HomePage() {
               <Link href="/" className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
                 Home
               </Link>
-              <Link href="/about" className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
-                About
+              <Link href="/newbie" className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                Non working in
               </Link>
               <Link href="/services" className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
                 Services
@@ -72,20 +65,7 @@ export default function HomePage() {
                 Resources
               </Link>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-200">
-              <div className="flex items-center px-4">
-                <div className="flex-shrink-0">
-                  <Link href="/login" className="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium">
-                    Login
-                  </Link>
-                </div>
-                <div className="ml-3">
-                  <Link href="/signup" className="block px-4 py-2 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                    Sign Up
-                  </Link>
-                </div>
-              </div>
-            </div>
+            {/* Remove the mobile login/signup buttons */}
           </div>
         )}
       </nav>
@@ -115,8 +95,8 @@ export default function HomePage() {
                 </motion.p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
-                    <Link href="/assessment" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                      Start Assessment
+                    <Link href="/interview" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                      Start Interview
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
@@ -270,8 +250,8 @@ export default function HomePage() {
           <p className="mt-4 text-lg leading-6 text-indigo-100">
             Join thousands of professionals who have transformed their careers with our AI-powered guidance.
           </p>
-          <Link href="/signup" className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto">
-            Get Started for Free
+          <Link href="/newbie" className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto">
+            Get Started for Non-Professionals
           </Link>
         </div>
       </div>
@@ -335,7 +315,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-              &copy; 2023 CareerAI. All rights reserved.
+              &copy; 2025 CareerAI. All rights reserved.
             </p>
           </div>
         </div>
