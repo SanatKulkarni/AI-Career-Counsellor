@@ -189,7 +189,7 @@ export default function NewbieQuestionnaire() {
   const analyzeAnswers = async () => {
     setLoading(true);
     try {
-      const genAI = new GoogleGenerativeAI('AIzaSyAzJno6phNweWn4MMU4j6LUgcqDfTW_cDk');
+      const genAI = new GoogleGenerativeAI('');
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const prompt = `Based on these career questionnaire answers, analyze the personality type and suggest suitable careers. Provide the response in this format:
